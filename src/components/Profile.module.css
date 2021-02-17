@@ -1,0 +1,8 @@
+.content {
+  grid-area: appContent;
+  background: tomato;
+}
+
+.item {
+  color: pink;
+}

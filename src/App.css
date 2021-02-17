@@ -10,21 +10,3 @@
   /*grid-gap: 10px;*/
 }
 
-.app-header {
-  grid-area: appHeader;
-  background: #7ec1ff;
-}
-
-.app-header img {
-  width: 50px;
-}
-
-.app-nav {
-  grid-area: appNav;
-  background: #a0d911;
-}
-
-.app-content {
-  grid-area: appContent;
-  background: tomato;
-}
