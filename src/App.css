@@ -4,9 +4,13 @@
   margin: 0 auto;
   grid-template-areas:
   "appHeader appHeader"
-  "appNav appContent";
+  "appNav appContent"
+  "appSidebar appContent";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   /*grid-gap: 10px;*/
 }
-
+.app-wrapper-content {
+  grid-area: appContent;
+  background: tomato;
+}

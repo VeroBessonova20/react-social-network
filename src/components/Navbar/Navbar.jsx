@@ -1,28 +1,29 @@
 import cls from './Navbar.module.css';
+import {NavLink} from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className={cls.nav}>
       <div className={`${cls.item} ${cls.active}`}>
-        <a href="/">Profile</a>
+        <NavLink to="/profile" activeClassName={cls.active}>Profile</NavLink>
       </div>
       <div className={`${cls.item} ${cls.active}`}>
-        <a href="/">Messages</a>
+        <NavLink to="/messages" activeClassName={cls.active}>Messages</NavLink>
       </div>
       <div className={`${cls.item} ${cls.active}`}>
-        <a href="/">News</a>
+        <NavLink to="/new" activeClassName={cls.active}>News</NavLink>
       </div>
       <div className={`${cls.item} ${cls.active}`}>
-        <a href="/">Music</a>
+        <NavLink to="/music" activeClassName={cls.active}>Music</NavLink>
       </div>
       <div className={`${cls.item} ${cls.active}`}>
-        <a href="/">Books</a>
+        <NavLink to="/books" activeClassName={cls.active}>Books</NavLink>
       </div>
       <div className={`${cls.item} ${cls.active}`}>
-        <a href="/">Films</a>
+        <NavLink to="/films" activeClassName={cls.active}>Films</NavLink>
       </div>
       <div className={`${cls.item} ${cls.active}`}>
-        <a href="/">Settings</a>
+        <NavLink to="/settings" activeClassName={cls.active}>Settings</NavLink>
       </div>
     </nav>
   )

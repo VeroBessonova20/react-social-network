@@ -1,0 +1,16 @@
+.padding {
+    padding: 10px;
+}
+.create {
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    margin-bottom: 30px;
+}
+.create textarea {
+    margin-bottom: 5px;
+}
+.btnGroup {
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+}

@@ -1,0 +1,9 @@
+.wrapperSidebar {
+    grid-area: appSidebar;
+    background: #a0d911;
+    padding: 20px;
+}
+.groupFriends {
+    display: flex;
+    justify-content: space-between;
+}

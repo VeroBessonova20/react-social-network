@@ -1,0 +1,13 @@
+.branches {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.branches img {
+    border-radius: 50%;
+    width: 40px;
+    margin-right: 10px;
+}
+.active {
+    color: green;
+}

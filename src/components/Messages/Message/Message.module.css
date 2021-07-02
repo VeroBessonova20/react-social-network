@@ -1,0 +1,6 @@
+
+.dialogs {}
+.dialogs .dialog {
+    padding: 10px;
+    color: white;
+}
