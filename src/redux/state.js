@@ -76,26 +76,10 @@ let store = {
     this._callSubscriber = observer
   },
   getState () {
-    debugger
     return this._state
   },
-
-  // addPosts () {
-  //   let newPost = {
-  //     id: this._state.profile.posts.length + 1,
-  //     posts:  this._state.profile.newPostText,
-  //     countLike: 0
-  //   }
-  //   this._state.profile.posts.push(newPost)
-  //   this._state.profile.newPostText = ''
-  //   this._callSubscriber(this._state, this.addPosts, this.updatePostText);
-  // }, // меняют стейт
-  // updatePostText (newPostText) {
-  //   this._state.profile.newPostText = newPostText
-  //   this._callSubscriber(this._state, this.addPosts, this.updatePostText);
-  // }, // меняют стейт
   dispatch (action) {
-    if (action.type === 'ADD POST') {
+    if (action.type === 'ADD_POST') {
       let newPost = {
         id: this._state.profile.posts.length + 1,
         posts:  this._state.profile.newPostText,
@@ -104,7 +88,7 @@ let store = {
       this._state.profile.posts.push(newPost)
       this._state.profile.newPostText = ''
       this._callSubscriber(this._state, this.addPosts, this.updatePostText);
-    } else if (action.type === 'UPDATE POST TEXT') {
+    } else if (action.type === 'UPDATE_POST_TEXT') {
       this._state.profile.newPostText = action.newPostText
       this._callSubscriber(this._state, this.addPosts, this.updatePostText);
     } else {

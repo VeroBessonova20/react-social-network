@@ -9,7 +9,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 function App(props) {
   const { state, addPosts, updatePostText } = props
   const { sidebar, messages, profile } = state
-debugger
+
   return (
     <div className="app-wrapper">
       <Header />
