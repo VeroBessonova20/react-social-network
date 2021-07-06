@@ -1,6 +1,7 @@
 import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
 import { useRef } from "react";
+import { addPostActionCreator, addUpdateNewPostActionCreator } from "../../../redux/state";
 
 const MyPosts = (props) => {
 
@@ -10,11 +11,11 @@ const MyPosts = (props) => {
     <Post key={post.id} message={post.posts} countLike={post.countLike}/>
   ))
 
-  const addPost = () => props.dispatch({ type: 'ADD_POST'})
+  const addPost = () => props.dispatch(addPostActionCreator())
 
   const onChangePostText = () => {
     let text = textareaRef.current.value;
-    const action = {type: 'UPDATE_POST_TEXT', newPostText: text};
+    const action = addUpdateNewPostActionCreator(text)
     props.dispatch(action)
   }
 

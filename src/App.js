@@ -5,10 +5,11 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Messages from "./components/Messages/Messages";
 import Sidebar from "./components/Sidebar/Sidebar";
+import store from "./redux/state";
 
 function App(props) {
   const { state, addPosts, updatePostText } = props
-  const { sidebar, messages, profile } = state
+  const { sidebar, dialogPage, profile } = state
 
   return (
     <div className="app-wrapper">
@@ -19,7 +20,7 @@ function App(props) {
         <Route
           // exact
           path="/messages"
-          render={() => <Messages dataMessages={messages.dataMessages}/>}
+          render={() => <Messages store={props.store}/>}
         />
         <Route
           // exact

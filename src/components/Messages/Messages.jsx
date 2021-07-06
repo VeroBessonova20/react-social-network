@@ -1,36 +1,50 @@
 import classes from './Messages.module.css';
 import MessagesItem from "./MessagesItem/MessagesItem";
 import Message from "./Message/Message";
-import {useRef} from "react";
+import {updateNewMessageCreator, sendMessageCreator} from "../../redux/state";
 
-const Messages = ({ dataMessages }) => {
+const Messages = (props) => {
+  const state = props.store.getState().dialogPage
+  const dialogs = state.dialogs
+  const message = state.messages
+  const newMessage = state.newMessageBody
 
-  const textareaRef = useRef(null)
   const addPost = () => {
-    let text = textareaRef.current.value
+    props.store.dispatch(sendMessageCreator())
   }
 
-  const messages = dataMessages.map(data => {
+  const clear = (event) => {
+    event.target.value = ''
+  }
+
+  const onChangePostText = (event) => {
+    let text = event.target.value;
+    props.store.dispatch(updateNewMessageCreator(text))
+  }
+
+  const messages = dialogs.map(data => {
     return (
         <MessagesItem key={data.id} id={data.id} userName={data.name}/>
     )
   })
 
-  const message = dataMessages.map(data => (
-    data.messages.map(message => {
-      return (
-          <Message message={message.message} key={message.id}/>
-      )
-    })
-  ))
+  const messageElem = message.map(data => {
+    return (
+      <Message message={data.message} key={data.id}/>
+    )
+  })
 
   const messagesBlock = <>
-    {message}
+    {messageElem}
     <div className={classes.create}>
-      <textarea ref={textareaRef}></textarea>
+      <textarea
+        placeholder="Enter your message"
+        value={newMessage}
+        onChange={onChangePostText}
+      />
       <div className={classes.btnGroup}>
         <button onClick={addPost}>Add post</button>
-        <button>Remove</button>
+        <button onClick={clear}>Remove</button>
       </div>
     </div>
   </>
